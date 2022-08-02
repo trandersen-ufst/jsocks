@@ -2,19 +2,30 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.ravn.jsocks</groupId>
-	<artifactId>jsocks-parent</artifactId>
-	<packaging>pom</packaging>
+	<artifactId>jsocks</artifactId>
 	<version>0.0.2-SNAPSHOT</version>
+
+	<parent>
+		<groupId>com.github.ravn.jsocks</groupId>
+		<artifactId>jsocks-parent</artifactId>
+		<version>0.0.2-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
 	<name>SOCKS proxy</name>
 	<description>Cloned from http://sourceforge.net/projects/jsocks/</description>
 
 	<properties>
 		<project.build.sourceEncoding>ASCII</project.build.sourceEncoding>
-		<maven.compiler.source>7</maven.compiler.source>
-		<maven.compiler.target>7</maven.compiler.target>
 	</properties>
-	<modules>
-		<module>jsocks</module>
-		<module>jsocks-helpers</module>
-	</modules>
+
+
+	<dependencies>
+		<!-- latest version before 2.0 which requires Java 8 -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.36</version>
+		</dependency>
+	</dependencies>
 </project>
